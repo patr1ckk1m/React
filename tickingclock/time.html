@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <title>Ticking Clock</title>
+    <script src = "node_modules/react/dist/react.js"></script>
+    <script src = "node_modules/react-dom/dist/react-dom.js"></script>
+</head>
+<script>
+    console.log(React);
+    console.log(ReactDOM);
+</script>
+<body>
+    <h1>The time is: </h1>
+    <div id = 'app'></div>
+
+    <script>
+        function getTime(){
+            let date = new Date();
+            var time = React.createElement('h1', null, date.toLocaleTimeString());
+            ReactDOM.render(
+                time,
+                document.getElementById("app")
+            );
+        }
+        let nIntervalId = setInterval(
+            getTime,
+            1000
+        );
+    </script>
+
+</body>
